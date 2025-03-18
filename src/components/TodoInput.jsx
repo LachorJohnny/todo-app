@@ -12,7 +12,12 @@ const TodoInput = (props) => {
         value={inputValue}
         onChange={(event) => setInputValue(event.target.value)}
       />
-      <button onClick={() => handleAddTodo(inputValue)}>
+      <button
+        onClick={() => {
+          handleAddTodo(inputValue);
+          setInputValue('')
+        }}
+      >
         <i className="fa-solid fa-plus"></i>
       </button>
     </div>

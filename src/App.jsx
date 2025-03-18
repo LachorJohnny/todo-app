@@ -15,15 +15,29 @@ const App = () => {
     setTodos(newTodoList);
   };
 
-  const handleEditTodo = () => {};
+  const handleCompleteTodo = (index) => {
+    const newTodoList = [...todos];
+    const completedTodo = todos[index];
+    completedTodo['complete'] = true;
+    newTodoList[index] = completedTodo;
+    setTodos(newTodoList);
+  };
 
-  const handleDeleteTodo = () => {};
+  const handleDeleteTodo = (index) => {
+    const newTodoList = todos.filter((task, taskIndex) => taskIndex !== index);
+    setTodos(newTodoList);
+  };
 
   return (
     <>
       <Header todos={todos} />
       <Tabs selectedTab={selectedTab} setSelectedTab={setSelectedTab} todos={todos} />
-      <TodoList selectedTab={selectedTab} todos={todos} />
+      <TodoList
+        handleCompleteTodo={handleCompleteTodo}
+        handleDeleteTodo={handleDeleteTodo}
+        selectedTab={selectedTab}
+        todos={todos}
+      />
       <TodoInput handleAddTodo={handleAddTodo} />
     </>
   );
