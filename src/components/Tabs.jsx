@@ -1,5 +1,5 @@
 const Tabs = (props) => {
-  const { todos } = props;
+  const { selectedTab, setSelectedTab, todos } = props;
   const tabs = ['All', 'Open', 'Completed'];
 
   return (
@@ -13,13 +13,18 @@ const Tabs = (props) => {
             : todos.filter((task) => task.complete).length;
 
         return (
-          <button key={tabIndex} className="tab-button">
+          <button
+            onClick={() => setSelectedTab(tab)}
+            key={tabIndex}
+            className={'tab-button ' + (tab === selectedTab ? 'tab-selected' : ' ')}
+          >
             <h4>
               {tab} <span>({numOfTasks})</span>
             </h4>
           </button>
         );
       })}
+      <hr />
     </nav>
   );
 };

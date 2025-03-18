@@ -1,9 +1,9 @@
 import TodoCard from './TodoCard';
 
 const TodoList = (props) => {
-  const { todos } = props;
+  const { selectedTab, todos } = props;
 
-  const tab = 'All';
+  const tab = selectedTab;
   const filterTodosList =
     tab === 'All'
       ? todos

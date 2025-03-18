@@ -7,6 +7,8 @@ import { useState } from 'react';
 const App = () => {
   const [todos, setTodos] = useState([]);
 
+  const [selectedTab, setSelectedTab] = useState('All');
+
   const handleAddTodo = (newTask) => {
     if (!newTask) return;
     const newTodoList = [...todos, { input: newTask, complete: false }];
@@ -20,8 +22,8 @@ const App = () => {
   return (
     <>
       <Header todos={todos} />
-      <Tabs todos={todos} />
-      <TodoList todos={todos} />
+      <Tabs selectedTab={selectedTab} setSelectedTab={setSelectedTab} todos={todos} />
+      <TodoList selectedTab={selectedTab} todos={todos} />
       <TodoInput handleAddTodo={handleAddTodo} />
     </>
   );
