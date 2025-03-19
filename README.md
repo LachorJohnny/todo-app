@@ -20,7 +20,7 @@ Task Manager is a simple and efficient task management application designed to k
 
 ## Demo
 
-You can check out the project live at: [Task Manager Demo](https://your-demo-link.com)
+You can check out the project live at: [Task Manager Demo](https://todo-app-johnny.vercel.app)
 
 ## Technologies
 
