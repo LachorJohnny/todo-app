@@ -38,7 +38,7 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/task-manager.git
+   git clone https://github.com/LachorJohnny/todo-app.git
    cd task-manager
    ```
 2. Install dependencies:
